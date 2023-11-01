@@ -224,7 +224,7 @@ h4 {
     position: relative;
   }
   .contactbutton {
-    margin-left: -15px;
+    margin-left: -16px;
     margin-bottom: 20px;
   }
   .about-info {
@@ -237,6 +237,12 @@ h4 {
     display: block;
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  .social-links .github,
+  .linkdin,
+  .instagram,
+  .text-buttons {
+    margin: 2px 5px;
   }
   .eduaction,
   .experience {

@@ -34,10 +34,7 @@ function Projects() {
       <div class="grid-container">
         <div class="grid-item">
           <Card sx={{ minWidth: 300 }}>
-            <CardHeader
-              title="Chat Application"
-              subheader="September 14, 2016"
-            />
+            <CardHeader title="Chat Application" subheader="March 21, 2023" />
             <CardMedia
               // sx={{ height: 300 }}
               component="img"
@@ -62,7 +59,7 @@ function Projects() {
         </div>
         <div class="grid-item">
           <Card sx={{ minWidth: 300 }}>
-            <CardHeader title="Landing Page" subheader="September 14, 2016" />
+            <CardHeader title="Landing Page" subheader="June 15, 2023" />
             <CardMedia
               component="img"
               height="194"
@@ -72,7 +69,7 @@ function Projects() {
             <CardContent></CardContent>
             <CardActions disableSpacing>
               <IconButton aria-label="add to favorites">
-                <a href="#">
+                <a href="https://github.com/SahilPawar10/Landingpage">
                   <GitHubIcon />
                 </a>
               </IconButton>
@@ -86,7 +83,7 @@ function Projects() {
         </div>
         <div class="grid-item">
           <Card sx={{ minWidth: 300 }}>
-            <CardHeader title="VMS" subheader="September 14, 2016" />
+            <CardHeader title="VMS" subheader="September 20, 2023" />
             <CardMedia
               component="img"
               height="194"
