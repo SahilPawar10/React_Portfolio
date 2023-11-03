@@ -9,6 +9,7 @@ import { styled } from "@mui/material/styles";
 // import Typography from "@mui/material/Typography";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OnlinePredictionIcon from "@mui/icons-material/OnlinePrediction";
+import Tooltip from "@mui/material/Tooltip";
 
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -44,16 +45,20 @@ function Projects() {
             />
             <CardContent></CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <a href="https://github.com/SahilPawar10/Chat_Application">
-                  <GitHubIcon />
-                </a>
-              </IconButton>
-              <IconButton aria-label="share">
-                <a href="#">
-                  <OnlinePredictionIcon />
-                </a>
-              </IconButton>
+              <Tooltip title="Github Link">
+                <IconButton aria-label="add to favorites">
+                  <a href="https://github.com/SahilPawar10/Chat_Application">
+                    <GitHubIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Hosted Link">
+                <IconButton aria-label="share">
+                  <a href="#">
+                    <OnlinePredictionIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
             </CardActions>
           </Card>
         </div>
@@ -68,16 +73,20 @@ function Projects() {
             />
             <CardContent></CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <a href="https://github.com/SahilPawar10/Landingpage">
-                  <GitHubIcon />
-                </a>
-              </IconButton>
-              <IconButton aria-label="share">
-                <a href="https://voluble-bonbon-fffa7d.netlify.app/">
-                  <OnlinePredictionIcon />
-                </a>
-              </IconButton>
+              <Tooltip title="Github Link">
+                <IconButton aria-label="add to favorites">
+                  <a href="https://github.com/SahilPawar10/Landingpage">
+                    <GitHubIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Hosted Link">
+                <IconButton aria-label="share">
+                  <a href="https://voluble-bonbon-fffa7d.netlify.app/">
+                    <OnlinePredictionIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
             </CardActions>
           </Card>
         </div>
@@ -92,16 +101,21 @@ function Projects() {
             />
             <CardContent></CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <a href="https://github.com/SahilPawar10/VMS/">
-                  <GitHubIcon />
-                </a>
-              </IconButton>
-              <IconButton aria-label="share">
-                <a href="#">
-                  <OnlinePredictionIcon />
-                </a>
-              </IconButton>
+              <Tooltip title="Github Link">
+                <IconButton aria-label="add to favorites">
+                  <a href="https://github.com/SahilPawar10/VMS/">
+                    <GitHubIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+
+              <Tooltip title="Hosted Link">
+                <IconButton aria-label="share">
+                  <a href="#">
+                    <OnlinePredictionIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
             </CardActions>
           </Card>
         </div>

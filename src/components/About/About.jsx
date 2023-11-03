@@ -18,8 +18,8 @@ function About() {
           <div class="about-text">
             <h3>Hello there! 👋 </h3>
             <p>
-              <b>I'm Sahil Pawar,</b> I'm a Full Stack with One years of
-              experience. Specialized in building SaaS applications using
+              <b>I'm Sahil Pawar,</b> I'm a Full Stack Developer with One year
+              of experience. Specialized in building SaaS applications using
               Node.js and React, complemented by strong HTML, CSS, and Redux
               skills. Adept at testing with Jest, and familiar with SQL and
               MongoDB databases. Additionally, I'm open to exploring entry-level
@@ -70,7 +70,7 @@ function About() {
           <div className="section1">
             <div className="info-item padd-15">
               <p>
-                Name : <span>Pawar Sahil</span>
+                Name : <span>Pawar Sahil Shankar</span>
               </p>
             </div>
             <div className="info-item padd-15">
