@@ -23,43 +23,6 @@ function Navbar() {
 
   window.addEventListener("scroll", changebackground);
   return (
-    // <nav className={nav ? "nav active" : "nav"}>
-    //   <div className="logo">
-    //     <img src={logo} alt="" />
-    //   </div>
-
-    //   <div className="mobile-nav">
-    //     {shownav ? (
-    //       <i class="fa fa-bars" aria-hidden="true"></i>
-    //     ) : (
-    //       <i class="fa fa-window-close" aria-hidden="true"></i>
-    //     )}
-    //   </div>
-    //   <div className="elements">
-    //     <ul>
-    //       <li>
-    //         <Link to="main" smooth={true} duration={500} offset={-80}>
-    //           Home
-    //         </Link>
-    //       </li>
-    //       <li>
-    //         <Link to="about" smooth={true} duration={500} offset={-80}>
-    //           About
-    //         </Link>
-    //       </li>
-    //       <li>
-    //         <Link to="projects" smooth={true} duration={500} offset={-80}>
-    //           Projects
-    //         </Link>
-    //       </li>
-    //       <li>
-    //         <Link to="contacts" smooth={true} duration={500} offset={-80}>
-    //           Contact
-    //         </Link>
-    //       </li>
-    //     </ul>
-    //   </div>
-    // </nav>
     <nav className={nav ? "nav active" : "nav"}>
       <div className="container">
         <div className="logo">
@@ -125,7 +88,6 @@ function Navbar() {
         </ul>
       </div>
     </nav>
-    //
   );
 }
 
