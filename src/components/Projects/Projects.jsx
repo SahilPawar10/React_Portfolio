@@ -25,6 +25,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import chat from "../../assets/chat application.png";
 import landingPage from "../../assets/landingpage.png";
 import vms from "../../assets/visitor-management-system3.jpg";
+import swarajya from "../../assets/swarajya.png";
+import digihost from "../../assets/digihost.png";
 
 function Projects() {
   return (
@@ -33,6 +35,94 @@ function Projects() {
         <h2>Recent Projects</h2>
       </div>
       <div class="grid-container">
+        <div class="grid-item">
+          <Card sx={{ minWidth: 300 }}>
+            <CardHeader title="NGO Website" subheader="Current" />
+            <CardMedia
+              component="img"
+              height="194"
+              image={swarajya}
+              alt="Swarajya"
+            />
+            <CardContent></CardContent>
+            <CardActions disableSpacing>
+              <Tooltip title="Github Link">
+                <IconButton aria-label="add to favorites">
+                  <a href="https://github.com/SahilPawar10/Landingpage">
+                    <GitHubIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Hosted Link">
+                <IconButton aria-label="share">
+                  <a href="https://swarajyafoundation.netlify.app/">
+                    <OnlinePredictionIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+            </CardActions>
+          </Card>
+        </div>
+        <div class="grid-item">
+          <Card sx={{ minWidth: 300 }}>
+            <CardHeader
+              title="Digihot LandingPAge"
+              subheader="December 10, 2023"
+            />
+            <CardMedia
+              component="img"
+              height="194"
+              image={digihost}
+              alt="Paella dish"
+            />
+            <CardContent></CardContent>
+            <CardActions disableSpacing>
+              <Tooltip title="Github Link">
+                <IconButton aria-label="add to favorites">
+                  <a href="https://sahilpawar10.github.io/digiHost/">
+                    <GitHubIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+
+              <Tooltip title="Hosted Link">
+                <IconButton aria-label="share">
+                  <a href="https://sahilpawar10.github.io/digiHost/">
+                    <OnlinePredictionIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+            </CardActions>
+          </Card>
+        </div>
+        <div class="grid-item">
+          <Card sx={{ minWidth: 300 }}>
+            <CardHeader title="Landing Page" subheader="June 15, 2023" />
+            <CardMedia
+              component="img"
+              height="194"
+              image={landingPage}
+              alt="Paella dish"
+            />
+            <CardContent></CardContent>
+            <CardActions disableSpacing>
+              <Tooltip title="Github Link">
+                <IconButton aria-label="add to favorites">
+                  <a href="https://github.com/SahilPawar10/Landingpage">
+                    <GitHubIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Hosted Link">
+                <IconButton aria-label="share">
+                  <a href="https://landingpage-sp.netlify.app/">
+                    <OnlinePredictionIcon />
+                  </a>
+                </IconButton>
+              </Tooltip>
+            </CardActions>
+          </Card>
+        </div>
         <div class="grid-item">
           <Card sx={{ minWidth: 300 }}>
             <CardHeader title="Chat Application" subheader="March 21, 2023" />
@@ -62,34 +152,7 @@ function Projects() {
             </CardActions>
           </Card>
         </div>
-        <div class="grid-item">
-          <Card sx={{ minWidth: 300 }}>
-            <CardHeader title="Landing Page" subheader="June 15, 2023" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={landingPage}
-              alt="Paella dish"
-            />
-            <CardContent></CardContent>
-            <CardActions disableSpacing>
-              <Tooltip title="Github Link">
-                <IconButton aria-label="add to favorites">
-                  <a href="https://github.com/SahilPawar10/Landingpage">
-                    <GitHubIcon />
-                  </a>
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Hosted Link">
-                <IconButton aria-label="share">
-                  <a href="https://voluble-bonbon-fffa7d.netlify.app/">
-                    <OnlinePredictionIcon />
-                  </a>
-                </IconButton>
-              </Tooltip>
-            </CardActions>
-          </Card>
-        </div>
+
         <div class="grid-item">
           <Card sx={{ minWidth: 300 }}>
             <CardHeader title="VMS" subheader="September 20, 2023" />
