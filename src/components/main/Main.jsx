@@ -7,6 +7,7 @@ import About from "../About/About";
 import Contact from "../contact/Contact";
 import Stack from "../techStack/Stack";
 import Projects from "../Projects/Projects";
+import GitHubCalendar from "react-github-calendar";
 
 function Main() {
   return (
@@ -67,6 +68,11 @@ function Main() {
 
       <Projects />
       <Contact />
+      <div id="github">
+        <div>
+          <GitHubCalendar username="SahilPawar10" />
+        </div>
+      </div>
     </>
   );
 }

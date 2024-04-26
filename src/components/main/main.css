@@ -85,6 +85,18 @@
   border: none;
 }
 
+#github {
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: #0d1117;
+}
+#github div {
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+}
+
 /* @media (max-width: 890) {
   .text-with-image {
     margin: 20px;
