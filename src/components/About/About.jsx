@@ -75,7 +75,7 @@ function About() {
             </div>
             <div className="info-item padd-15">
               <p>
-                Age : <span>23</span>
+                Age : <span>24</span>
               </p>
             </div>
             <div className="info-item padd-15">
@@ -114,7 +114,7 @@ function About() {
             </div>
             <div className="info-item padd-15">
               <p>
-                Current Location : <span>Mumbai</span>
+                Current Location : <span>Navi Mumbai</span>
               </p>
             </div>
             <div className="info-item padd-15">
@@ -238,7 +238,7 @@ function About() {
             <b>2</b> <s>:</s>
             <span>
               Data Structure And Alogorithum In Javascript ,FreeCodeCamp, Aug
-              2027.
+              2023.
             </span>
           </p>
         </div>
