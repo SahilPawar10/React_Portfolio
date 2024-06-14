@@ -49,7 +49,7 @@ function Contact() {
             <i class="fa fa-map-marker-alt"></i>
           </div>
           <h4>Address</h4>
-          <p>Mumbai,Mankhurd</p>
+          <p>Koparkhairne,Navi Mumbai</p>
         </div>
         <div className="contact-info">
           <div class="icon">
