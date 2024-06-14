@@ -197,19 +197,15 @@ function About() {
               <div className="timeline-item">
                 <div class="circle-dot"></div>
                 <div className="timeline-date">
-                  <i class="fa fa-calendar"></i> October 2022 - October 2023
+                  <i class="fa fa-calendar"></i> June 2024 - Current
                 </div>
                 <div className="timeline-title">
-                  Jr.Full Stack Developer <br />
-                  Cloudstrats Technlogies,Ghatkopar
+                  Full Stack Developer <br />
+                  Edulab Exchange , Andheri .
                 </div>
                 <div className="timeline-desc">
                   <p>
-                    Full Stack Developer at CloudStrats Technology ,
-                    Developed responsive and user-friendly web applications
-                    using <b>React and Node Js.</b> <br />
-                    Utilizing my skills in
-                    <b> HTML, CSS, JavaScript, Node Js and React JS,MongoDB </b>
+                    {/*  */}
                   </p>
                 </div>
               </div>
@@ -235,15 +231,19 @@ function About() {
               <div className="timeline-item">
                 <div class="circle-dot"></div>
                 <div className="timeline-date">
-                  <i class="fa fa-calendar"></i> June 2024 - Current
+                  <i class="fa fa-calendar"></i> October 2022 - October 2023
                 </div>
                 <div className="timeline-title">
-                  Full Stack Developer <br />
-                  Edulab Exchange , Andheri .
+                  Jr.Full Stack Developer <br />
+                  Cloudstrats Technlogies,Ghatkopar
                 </div>
                 <div className="timeline-desc">
                   <p>
-                    {/*  */}
+                    Full Stack Developer at CloudStrats Technology ,
+                    Developed responsive and user-friendly web applications
+                    using <b>React and Node Js.</b> <br />
+                    Utilizing my skills in
+                    <b> HTML, CSS, JavaScript, Node Js and React JS,MongoDB </b>
                   </p>
                 </div>
               </div>
