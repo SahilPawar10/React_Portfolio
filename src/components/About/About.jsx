@@ -206,14 +206,44 @@ function About() {
                 <div className="timeline-desc">
                   <p>
                     Full Stack Developer at CloudStrats Technology ,
-                    contributing to the development and enhancement of web
-                    applications. <br />
                     Developed responsive and user-friendly web applications
                     using <b>React and Node Js.</b> <br />
                     Utilizing my skills in
-                    <b> HTML, CSS, JavaScript, Node Js and React JS, </b> I
-                    contribute to the development of intuitive and visually
-                    appealing frontend interfaces
+                    <b> HTML, CSS, JavaScript, Node Js and React JS,MongoDB </b>
+                  </p>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div class="circle-dot"></div>
+                <div className="timeline-date">
+                  <i class="fa fa-calendar"></i> December 2023 - June 2024
+                </div>
+                <div className="timeline-title">
+                  KYC Analyst <br />
+                  Eclerx , Aeroli .
+                </div>
+                <div className="timeline-desc">
+                  <p>
+                    KYC Apprentice Analyst  at Eclerx ,
+                    Responsible for ensuring a financial institution’s compliance with anti-money laundering regulations.
+                   <br/>
+                    Conducting due diligence on customers to assess potential risk. <br/>
+                    Reviewing and verifying customer identification and documentation
+                  </p>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div class="circle-dot"></div>
+                <div className="timeline-date">
+                  <i class="fa fa-calendar"></i> June 2024 - Current
+                </div>
+                <div className="timeline-title">
+                  Full Stack Developer <br />
+                  Edulab Exchange , Andheri .
+                </div>
+                <div className="timeline-desc">
+                  <p>
+                    {/*  */}
                   </p>
                 </div>
               </div>
