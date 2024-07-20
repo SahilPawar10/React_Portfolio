@@ -208,7 +208,7 @@ h4 {
   letter-spacing: 2px;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 450px) {
   #about {
     margin: 20px;
     box-sizing: border-box;

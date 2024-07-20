@@ -142,7 +142,7 @@ nav ul li a:hover {
   }
 } */
 
-@media (max-width: 412px) {
+@media (max-width: 450px) {
   .logo {
     margin-left: -90px;
     /* margin-left: -662px; */

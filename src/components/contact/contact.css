@@ -150,7 +150,7 @@
   border: none;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 450px) {
   #contacts {
     margin: 20px;
   }
