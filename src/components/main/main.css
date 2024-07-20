@@ -117,7 +117,7 @@
   }
 } */
 
-@media (max-width: 412px) {
+@media (max-width: 450px) {
   .text-with-image {
     display: table-cell;
     padding-top: 129px;
