@@ -2,12 +2,13 @@ import React from "react";
 import "./main.css";
 import Navbar from "../navbar/Navbar";
 import photo from "../../assets/photo.jpg";
-import resume from "../../assets/sahilpawar2023 (3).pdf";
+import resume from "../../assets/sahilpawar25.pdf";
 import About from "../About/About";
 import Contact from "../contact/Contact";
 import Stack from "../techStack/Stack";
 import Projects from "../Projects/Projects";
 import GitHubCalendar from "react-github-calendar";
+import AwardSection from "../Aword/AwardSection";
 
 function Main() {
   return (
@@ -62,10 +63,14 @@ function Main() {
           </div>
         </div>
       </div>
+
+      <div>
+        <AwardSection />
+      </div>
+
       <div className="main-about">
         <About />
       </div>
-
       <Projects />
       <Contact />
       <div id="github">
