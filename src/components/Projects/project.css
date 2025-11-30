@@ -47,7 +47,7 @@
   margin-top: 8px;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 450px) {
   #projects {
     margin: 20px;
   }
