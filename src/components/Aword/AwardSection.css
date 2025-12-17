@@ -98,3 +98,106 @@
 .award-gallery img:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 600px) {
+  #awards {
+    margin: 20px;
+  }
+
+  .award-hero {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .award-left {
+    padding: 10px;
+  }
+
+  .award-left h1 {
+    font-size: 32px;
+  }
+
+  .award-year {
+    font-size: 22px;
+  }
+
+  .award-text {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .award-tag {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .award-right img {
+    width: 100%;
+    height: 260px;
+    margin-top: 20px;
+  }
+
+  .gallery-title {
+    font-size: 22px;
+    margin: 30px 0 20px;
+  }
+
+  .award-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .award-gallery img {
+    height: 220px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  #awards {
+    margin: 40px;
+  }
+
+  .award-hero {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .award-left h1 {
+    font-size: 40px;
+  }
+
+  .award-year {
+    font-size: 26px;
+  }
+
+  .award-right img {
+    width: 320px;
+    height: 320px;
+    margin-top: 25px;
+  }
+
+  .award-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .award-gallery img {
+    height: 260px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  #awards {
+    margin: 60px;
+  }
+
+  .award-left h1 {
+    font-size: 44px;
+  }
+
+  .award-right img {
+    width: 330px;
+    height: 330px;
+  }
+}
