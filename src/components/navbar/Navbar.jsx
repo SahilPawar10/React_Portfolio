@@ -1,92 +1,40 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import logo from "../../assets/s__1_-removebg-preview (1).png";
-// import { Link } from "react-router-dom";
-import { Link } from "react-scroll";
+
+const links = [
+  ["#about", "About"],
+  ["#experience", "Experience"],
+  ["#skills", "Skills"],
+  ["#projects", "Projects"],
+  ["#awards", "Recognition"],
+  ["#contacts", "Contact"],
+];
 
 function Navbar() {
-  const [nav, setnav] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const [shownav, setNav] = useState(false);
-
-  const handleShownav = () => {
-    setNav(!shownav);
-  };
-
-  const changebackground = () => {
-    if (window.scrollY >= 50) {
-      setnav(true);
-    } else {
-      setnav(false);
-    }
-  };
-
-  window.addEventListener("scroll", changebackground);
   return (
-    <nav className={nav ? "nav active" : "nav"}>
-      <div className="container">
-        <div className="logo">
-          <img src={logo} alt="" />
-        </div>
-      </div>
-      <div className="menu-icon" onClick={handleShownav}>
-        {shownav ? (
-          <i class="fa fa-window-close" aria-hidden="true"></i>
-        ) : (
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        )}
-      </div>
-      <div className={`nav-elements ${shownav && "active"}`}>
-        <ul>
-          <li>
-            <Link
-              to="main"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              onClick={handleShownav}
-            >
-              Home
-            </Link>
+    <nav className="nav">
+      <a href="#main" className="nav-logo">
+        sahil<span>.</span>pawar
+      </a>
+      <button
+        className="nav-toggle"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+      >
+        <i className={`fa ${open ? "fa-xmark" : "fa-bars"}`} aria-hidden="true"></i>
+      </button>
+      <ul className={open ? "nav-links open" : "nav-links"}>
+        {links.map(([href, label]) => (
+          <li key={href}>
+            <a href={href} onClick={() => setOpen(false)}>
+              {label}
+            </a>
           </li>
-
-          <li>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              onClick={handleShownav}
-            >
-              About
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              onClick={handleShownav}
-            >
-              Projects
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="contacts"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              onClick={handleShownav}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </div>
+        ))}
+      </ul>
     </nav>
   );
 }

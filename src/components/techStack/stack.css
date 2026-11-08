@@ -1,33 +1,65 @@
-.carosoul {
-  margin: 0 30px 60px 30px;
+.skills {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "head scene" "list scene";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(24px, 4vw, 56px);
 }
 
-.slider {
-  background: white;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-  height: 100px;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  /* width: 960px; */
+.skills-head {
+  grid-area: head;
 }
 
-.slider .slide-track {
-  animation: scroll 40s linear infinite;
-  display: flex;
-  width: calc(250px * 14);
+.skills-list {
+  grid-area: list;
 }
 
-.slider .slide {
-  height: 100px;
-  width: 250px;
+.skills-list li {
+  padding: 16px 12px;
+  border-top: 1px solid var(--line);
+  transition: background 0.2s;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+.skills-list li:hover {
+  background: var(--panel);
+}
+
+.skills-list h3 {
+  font: 500 14px var(--mono);
+  color: var(--amber);
+  margin-bottom: 4px;
+}
+
+.skills-list p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.skills-scene {
+  grid-area: scene;
+  align-self: start;
+  position: sticky;
+  top: 84px;
+  aspect-ratio: 1;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.skills-scene:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 860px) {
+  .skills {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "head" "scene" "list";
+    grid-template-rows: none;
   }
-  100% {
-    transform: translateX(calc(-250px * 7));
+
+  .skills-scene {
+    position: static;
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
   }
 }

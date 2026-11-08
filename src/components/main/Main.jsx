@@ -1,83 +1,115 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./main.css";
 import Navbar from "../navbar/Navbar";
-import photo from "../../assets/photo.jpg";
-import resume from "../../assets/sahilpawar25.pdf";
+import resume from "../../assets/sahilpawar_fullstack-2026.pdf";
 import About from "../About/About";
 import Contact from "../contact/Contact";
 import Stack from "../techStack/Stack";
 import Projects from "../Projects/Projects";
-import GitHubCalendar from "react-github-calendar";
 import AwardSection from "../Aword/AwardSection";
+import Scene3D from "../../three/Scene3D";
+import { reportVisit } from "../mail/mail";
 
 function Main() {
+  const [ready, setReady] = useState(false);
+  const [riding, setRiding] = useState(false);
+
+  useEffect(() => {
+    reportVisit();
+  }, []);
+
+  const bike = useMemo(
+    () => ({
+      held: { ArrowLeft: 0, ArrowRight: 0 },
+      riding: false,
+      onReady: () => setReady(true),
+    }),
+    []
+  );
+
+  const ride = (on) => {
+    bike.riding = on;
+    bike.held.ArrowLeft = 0;
+    bike.held.ArrowRight = 0;
+    setRiding(on);
+    if (on) window.scrollTo(0, 0);
+  };
+
+  const steer = (key) => ({
+    onPointerDown: () => (bike.held[key] = 1),
+    onPointerUp: () => (bike.held[key] = 0),
+    onPointerCancel: () => (bike.held[key] = 0),
+    onContextMenu: (e) => e.preventDefault(),
+  });
+
   return (
     <>
       <Navbar />
-      <div id="main">
-        <div className="banner">
-          <div className="text-with-image">
-            <div className="mobile-image">
-              <img src={photo} alt="profile_photo" />
-            </div>
-            <div className="text">
-              <h1 className="web-header">
-                Hi👋, <br />I am <span class="name">Sahil Pawar</span> <br />
-                <span className="animate-charcter">a Full-Stack Developer</span>
-              </h1>
-
-              <h1 className="mobh1">
-                I am <span className="animate-charcter"> Sahil Pawar</span>
-              </h1>
-              <p className="webtext">
-                Welcome to my personal portfolio, I am Sahil Pawar a skilled
-                Full
-                <br />
-                Stack Developer with passion for a creating robust ,scalable,and
-                <br />
-                responsive user-freindly web applications.I have worked on
-                variety
-                <br />
-                of web projects ranging from personal projects to various saas
-                based projects
-              </p>
-              <p className="mobile-text">
-                -This is my Official Portfolio website to shows all Details and
-                Works.
-              </p>
-              <br />
-
-              <div className="text-buttons">
-                <a href={resume} class="t-btns" download>
-                  Download RESUME
-                </a>
-              </div>
-            </div>
-            <div className="mobile-text"></div>
-            <div className="image">
-              <img src={photo} alt="profile_photo" />
-            </div>
+      <header id="main" className={riding ? "hero riding" : "hero"}>
+        <Scene3D name="hero" input={bike} className="hero-scene" />
+        <p className="hero-hint">
+          <kbd>←</kbd> <kbd>→</kbd> steer the bike
+        </p>
+        {riding && (
+          <div className="ride">
+            <button className="btn ghost ride-done" onClick={() => ride(false)}>
+              Done
+            </button>
+            <button className="ride-steer left" aria-label="Steer left" {...steer("ArrowLeft")}>
+              <i className="fa fa-arrow-left" aria-hidden="true"></i>
+            </button>
+            <button className="ride-steer right" aria-label="Steer right" {...steer("ArrowRight")}>
+              <i className="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
           </div>
-          <div className="techstaks">
-            <Stack />
+        )}
+        <div className="wrap hero-inner">
+          <p className="eyebrow">Full Stack Developer / Mumbai</p>
+          <h1>
+            Sahil
+            <br />
+            Pawar
+          </h1>
+          <p className="hero-lede">
+            I build backend systems that move millions of academic records, and
+            pick up where they left off when something fails.
+          </p>
+          <div className="hero-actions">
+            <a href="#projects" className="btn">
+              See my work
+            </a>
+            <a href={resume} className="btn ghost" download>
+              <i className="fa fa-arrow-down" aria-hidden="true"></i> Resume
+            </a>
+            {ready && (
+              <button className="btn ghost hero-ride" onClick={() => ride(true)}>
+                <i className="fa fa-motorcycle" aria-hidden="true"></i> Ride the bike
+              </button>
+            )}
           </div>
+          <dl className="hero-stats">
+            <div>
+              <dt>3 years</dt>
+              <dd>building and supporting web applications</dd>
+            </div>
+            <div>
+              <dt>Millions</dt>
+              <dd>of records across UG and PG programs</dd>
+            </div>
+            <div>
+              <dt>Temporal</dt>
+              <dd>fault-tolerant, resumable background work</dd>
+            </div>
+          </dl>
         </div>
-      </div>
-
-      <div>
-        <AwardSection />
-      </div>
-
-      <div className="main-about">
+      </header>
+      <main>
         <About />
-      </div>
-      <Projects />
-      <Contact />
-      <div id="github">
-        <div>
-          <GitHubCalendar username="SahilPawar10" />
-        </div>
-      </div>
+        <Stack />
+        <Projects />
+        <AwardSection />
+        <Contact />
+      </main>
     </>
   );
 }

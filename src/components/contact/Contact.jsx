@@ -1,135 +1,114 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import GitHubCalendar from "react-github-calendar";
 import "./contact.css";
+import { EMAIL } from "../mail/mail";
+
+const messages = {
+  sent: "Thanks, your message is on its way. I'll reply soon.",
+  error: "That didn't send. Please email me directly at sahilpawar9764@gmail.com.",
+};
+
+const calendarTheme = {
+  dark: ["#1a212c", "#5c4718", "#94701f", "#cc9529", "#ffb938"],
+};
 
 function Contact() {
   const form = useRef();
-  const [loading, SetLoading] = useState(false);
+  const [status, setStatus] = useState("idle");
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    SetLoading(true);
+    setStatus("sending");
 
     emailjs
-      .sendForm(
-        "service_wrh592n",
-        "template_pvmag3p",
-        form.current,
-        "UKVaAOhn3-2Alft8F"
-      )
+      .sendForm(EMAIL.service, EMAIL.template, form.current, EMAIL.publicKey)
       .then(
-        (result) => {
-          console.log(result.text);
-          SetLoading(false);
+        () => {
+          setStatus("sent");
+          form.current.reset();
         },
-        (error) => {
-          console.log(error.text);
-          SetLoading(false);
-        }
+        () => setStatus("error")
       );
-    e.target.reset();
   };
 
   return (
-    <div id="contacts">
-      <div className="contact-title">
-        <h2>Contact Me</h2>
-      </div>
-      <div className="contact-details">
-        <div className="contact-info">
-          <div class="icon">
-            <i class="fa fa-phone"></i>
-          </div>
-          <h4>Call Me on</h4>
-          <p>+91 9764804327</p>
+    <>
+      <section id="contacts" className="section wrap contact">
+        <div className="reveal">
+          <p className="eyebrow">Contact</p>
+          <h2 className="section-title">Let's build something that holds up.</h2>
+          <ul className="contact-links">
+            <li>
+              <a href="mailto:sahilpawar9764@gmail.com">
+                <i className="fa fa-envelope" aria-hidden="true"></i>
+                sahilpawar9764@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919764804327">
+                <i className="fa fa-phone" aria-hidden="true"></i>
+                +91 9764804327
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/sahil-pawar10/" target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+                sahil-pawar10
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/SahilPawar10" target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-github" aria-hidden="true"></i>
+                SahilPawar10
+              </a>
+            </li>
+          </ul>
         </div>
-        <div className="contact-info">
-          <div class="icon">
-            <i class="fa fa-map-marker-alt"></i>
-          </div>
-          <h4>Address</h4>
-          <p>Koparkhairne,Navi Mumbai</p>
-        </div>
-        <div className="contact-info">
-          <div class="icon">
-            <i class="fa fa-envelope"></i>
-          </div>
-          <h4>Email</h4>
-          <p>sahilpawar9764@gmail.com</p>
-        </div>
-        <div className="contact-info">
-          <div class="icon">
-            <i class="fa-brands fa-linkedin"></i>
-          </div>
-          <h4>Linkdin</h4>
-          <p>
-            {/* <a href="https://www.linkedin.com/in/sahil-pawar10/"> */}
-            sahil-pawar10
-            {/* </a> */}
-          </p>
-        </div>
-      </div>
-      <div className="contact-mail"></div>
-      <div className="mail-heading">
-        <h2>SEND ME AN EMAIL</h2>
 
-        <p>I am very responsive to mail</p>
-      </div>
-      <div className="mail-form">
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="row row1">
-            <div class="form-item col-6 ">
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="user_name"
-                  class="form-control"
-                  placeholder="Name"
-                  name="user_name"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-item col-6 ">
-              <div class="form-group">
-                <input
-                  type="email"
-                  id="user_email"
-                  class="form-control"
-                  placeholder="Email"
-                  name="user_email"
-                  required
-                />
-              </div>
-            </div>
-          </div>
-          <div class="form-item col-12 ">
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Subject"
-                name="subject"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-item col-12 ">
-            <div class="form-group">
-              <textarea class="form-control" name="message" required />
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-item col-12 padd-15">
-              <button type="submit" class="btn">
-                {loading ? "sending" : "Send Message"}
-              </button>
-            </div>
+        <form ref={form} onSubmit={sendEmail} className="contact-form reveal">
+          <label>
+            Name
+            <input type="text" name="user_name" autoComplete="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="user_email" autoComplete="email" required />
+          </label>
+          <label className="full">
+            Subject
+            <input type="text" name="subject" required />
+          </label>
+          <label className="full">
+            Message
+            <textarea name="message" rows="5" required />
+          </label>
+          <div className="full contact-send">
+            <button type="submit" className="btn" disabled={status === "sending"}>
+              {status === "sending" ? "Sending..." : "Send message"}
+            </button>
+            <p role="status" className={status}>
+              {messages[status]}
+            </p>
           </div>
         </form>
-      </div>
-    </div>
+      </section>
+
+      <section className="wrap github" aria-label="GitHub contributions">
+        <GitHubCalendar username="SahilPawar10" colorScheme="dark" theme={calendarTheme} />
+      </section>
+
+      <footer className="wrap footer">
+        <p>Sahil Pawar</p>
+        <p>
+          When you visit, your approximate city and network are emailed to me. I
+          don't receive your exact address or IP address.
+        </p>
+        <a href="https://www.instagram.com/sahil_pawar26/" target="_blank" rel="noreferrer">
+          Instagram
+        </a>
+      </footer>
+    </>
   );
 }
 
